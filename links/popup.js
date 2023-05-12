@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+/*chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === "capturar_click") {
         n++
         console.log("clicks: " + n);
@@ -9,4 +9,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         console.log("keys: " + k);
         document.getElementById("keys").textContent = k;
     }
-});
+});*/
+let n=10
+document.getElementById("keys").textContent = n;
+console.log(n)
