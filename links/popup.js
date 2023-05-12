@@ -1,15 +1,20 @@
-/*chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === "capturar_click") {
-        n++
-        console.log("clicks: " + n);
-        document.getElementById("clicks").textContent = n;
+        console.log(request.clicks)
+        document.getElementById("clicks").textContent = request.clicks;
     }
     if (request.action === "capturar_key") {
-        k++
-        console.log("keys: " + k);
-        document.getElementById("keys").textContent = k;
+        console.log(request.keys)
+        document.getElementById("keys").textContent = request.keys;
     }
-});*/
-let n=10
-document.getElementById("keys").textContent = n;
-console.log(n)
+});
+
+chrome.storage.local.get(["clicks"]).then((result) => {
+    console.log("clicks currently is " + result.clicks);
+    document.getElementById("clicks").textContent = result.clicks;
+})
+
+chrome.storage.local.get(["keys"]).then((result) => {
+    console.log("keys currently is " + result.keys);
+    document.getElementById("keys").textContent = result.keys;
+})
