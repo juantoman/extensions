@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+/* chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === "capturar_click") {
         console.log(request.clicks)
         document.getElementById("clicks").textContent = request.clicks;
@@ -7,7 +7,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         console.log(request.keys)
         document.getElementById("keys").textContent = request.keys;
     }
-});
+}); */
 
 chrome.storage.local.get(["clicks"]).then((result) => {
     console.log("clicks currently is " + result.clicks);

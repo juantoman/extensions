@@ -1,5 +1,16 @@
 let n=0
 let k=0
+
+chrome.storage.local.get(["clicks"]).then((result) => {
+  console.log("clicks currently is " + result.clicks);
+  n = result.clicks;
+})
+
+chrome.storage.local.get(["keys"]).then((result) => {
+  console.log("keys currently is " + result.keys);
+  k = result.keys;
+})
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === "capturar_click") {
     //console.log(request.url);
